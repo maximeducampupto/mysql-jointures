@@ -86,57 +86,110 @@ $niveau_ae = [
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <script src="src/ChartJS.min.js"></script>
+    <script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <style>
+        html, body {
+            height:100%;
+            width:100%;
+        }
+        #myChart {
+            height:100%;
+            width:100%;
+            min-height:250px;
+        }
+        .zc-ref {
+            display:none;
+        }
+    </style>
     <title>Compétences de <?= $eleves_competences[0]['prenom']. ' ' .$eleves_competences[0]['nom']?></title>
 </head>
-<body class="competencesBody">
+<body>
 
-<div class="main">
-    <h1 class="eleveCompetenceTitle">Compétences de <?= $eleves_competences[0]['prenom']. ' ' .$eleves_competences[0]['nom']?></h1>
+<header class="competencesHeaeder">
+    <h1>Compétences de <?= $eleves_competences[0]['prenom']. ' ' .$eleves_competences[0]['nom']?></h1>
+</header>
 
-    <div class="test">
-        <div class="competencesChart">
-            <h3>Niveau réel</h3>
-            <?php
+<div class="container">
 
-            $html = $niveau['HTML'];
-            $css = $niveau['CSS'];
-            $js = $niveau['JS'];
-            $php = $niveau['PHP'];
-
-
-            $PolarChart = new Antoineaugusti\EasyPHPCharts\Chart('polar', 'polar');
-            $PolarChart->set('data', array($html, $css, $js, $php));
-            $PolarChart->set('legend', array('HTML', 'CSS', 'JS', 'PHP'));
-            $PolarChart->set('displayLegend', true);
-            echo $PolarChart->returnFullHTML();
-
-            ?>
-        </div>
-
-
-        <div class="competencesChart">
-            <h3>Niveau auto-évalué</h3>
-            <?php
-
-            $html = $niveau_ae['HTML'];
-            $css = $niveau_ae['CSS'];
-            $js = $niveau_ae['JS'];
-            $php = $niveau_ae['PHP'];
-
-
-            $PolarChart2 = new Antoineaugusti\EasyPHPCharts\Chart('polar', 'polar2');
-            $PolarChart2->set('data', array($html, $css, $js, $php));
-            $PolarChart2->set('legend', array('HTML', 'CSS', 'JS', 'PHP'));
-            $PolarChart2->set('displayLegend', true);
-            echo $PolarChart2->returnFullHTML();
-
-            ?>
-        </div>
-    </div>
+    <div id='myChart'></div>
 
     <a href="index.php" class="backButton">Retour</a>
 </div>
 
+<script>
+    var myConfig = {
+        type : 'radar',
+        plot : {
+            aspect : 'area',
+            animation: {
+                effect:3,
+                sequence:1,
+                speed:700
+            }
+        },
+        scaleV : {
+            visible : false
+        },
+        scaleK : {
+            values : '0:3:1',
+            labels : ['HTML','CSS','JS','PHP'],
+            item : {
+                fontColor : '#607D8B',
+                backgroundColor : "white",
+                borderColor : "#aeaeae",
+                borderWidth : 1,
+                padding : '5 10',
+                borderRadius : 10
+            },
+            refLine : {
+                lineColor : '#c10000'
+            },
+            tick : {
+                lineColor : '#59869c',
+                lineWidth : 2,
+                lineStyle : 'dotted',
+                size : 20
+            },
+            guide : {
+                lineColor : "#607D8B",
+                lineStyle : 'solid',
+                alpha : 0.3,
+                backgroundColor : "#c5c5c5 #718eb4"
+            }
+        },
+        series : [
+            {
+                values : [
+                    <?= $niveau['HTML']?>,
+                    <?= $niveau['CSS']?>,
+                    <?= $niveau['JS']?>,
+                    <?= $niveau['PHP']?>,
+                ],
+                text:''
+            },
+            {
+                values : [
+                    <?= $niveau_ae['HTML']?>,
+                    <?= $niveau_ae['CSS']?>,
+                    <?= $niveau_ae['JS']?>,
+                    <?= $niveau_ae['PHP']?>,
+                ],
+                lineColor : '#53a534',
+                backgroundColor : '#689F38'
+            }
+        ]
+    };
+
+    zingchart.render({
+        id : 'myChart',
+        data : myConfig,
+        height: '130%',
+        width: '100%'
+    });
+</script>
 </body>
 </html>

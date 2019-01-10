@@ -50,57 +50,6 @@ body {
     font-size: 1.2rem;
 }
 
-.chartContainer
-{
-    width: 500px;
-    margin: 0 auto;
-}
-canvas.chart
-{
-    margin: 20px auto;
-    display: block;
-}
-
-.colorBlock
-{
-    display: inline-block;
-    width: 45px;
-    height: 15px;
-    vertical-align: middle;
-    margin-right: 15px;
-}
-ul.chartLegend
-{
-    list-style: none;
-    margin-bottom: 30px;
-}
-ul.chartLegend li
-{
-    margin-bottom: 5px;
-}
-
-
-.containerChartLegend {
-    margin: 0 auto;
-    width: 50%;
-}
-
-.competencesChart {
-    width: 30%;
-    margin: 0 auto;
-}
-
-.competencesChart h3 {
-    color: darkturquoise;
-}
-
-span {
-    float: right;
-}
-
-.competencesBody  {
-    background: #f4f4f4;
-}
 
 .eleveCompetenceTitle {
     color: darkturquoise;
@@ -108,12 +57,11 @@ span {
     margin: 3rem auto 3rem auto;
 }
 
-.main {
+.container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-
 }
 
 .backButton {
@@ -123,12 +71,13 @@ span {
     font-size: 2rem;
     padding: .6rem;
     text-decoration: none;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
-.test {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header {
+    background: darkturquoise;
+    color: white;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
 }
-
