@@ -6,8 +6,6 @@
  * Time: 10:47 AM
  */
 
-require 'EasyPHPCharts-master/src/Antoineaugusti/EasyPHPCharts/Chart.php';
-
 
 $host = "localhost";
 $db = 'mysql-jointures';
