@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+}
+
+.elevesContainer {
+    width: 70%;
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.eleve {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: darkturquoise;
+    border-left: 1px solid darkturquoise;
+    border-bottom: 1px solid darkturquoise;
+}
+
+.eleve p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.eleve button {
+    background: darkturquoise;
+    padding: .5rem;
+    border: none;
+    outline: none;
+}
+
+.eleve a {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.chartContainer
+{
+    width: 500px;
+    margin: 0 auto;
+}
+canvas.chart
+{
+    margin: 20px auto;
+    display: block;
+}
+
+.colorBlock
+{
+    display: inline-block;
+    width: 45px;
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+ul.chartLegend
+{
+    list-style: none;
+    margin-bottom: 30px;
+}
+ul.chartLegend li
+{
+    margin-bottom: 5px;
+}
+
+
+.containerChartLegend {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.competencesChart {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.competencesChart h3 {
+    color: darkturquoise;
+}
+
+span {
+    float: right;
+}
+
+.competencesBody  {
+    background: #f4f4f4;
+}
+
+.eleveCompetenceTitle {
+    color: darkturquoise;
+    text-align: center;
+    margin: 3rem auto 3rem auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.backButton {
+    background: darkturquoise;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: .6rem;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
