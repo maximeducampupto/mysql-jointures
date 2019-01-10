@@ -40,9 +40,6 @@ function getInfos($conn)
 
         inner join eleves
         on eleves_competences.eleves_id = eleves.id
-        
-        inner join competences
-        on competences.id = eleves_competences.competences_id
 
         where eleves.id = $id
         ";
