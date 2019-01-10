@@ -102,7 +102,7 @@ $niveau_ae = [
 </head>
 <body>
 
-<header class="competencesHeaeder">
+<header>
     <h1>Compétences de <?= $eleves_competences[0]['prenom']. ' ' .$eleves_competences[0]['nom']?></h1>
 </header>
 
@@ -111,6 +111,7 @@ $niveau_ae = [
     <div id='myChart'></div>
 
     <a href="index.php" class="backButton">Retour</a>
+    
 </div>
 
 <script>
