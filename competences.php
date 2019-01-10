@@ -33,9 +33,7 @@ function getInfos($conn)
         eleves.prenom,
         eleves.id,
         eleves_competences.niveau,
-        eleves_competences.niveau_ae,
-        competences.titre,
-        competences.description
+        eleves_competences.niveau_ae
 
         from
         eleves_competences
